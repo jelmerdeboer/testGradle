@@ -1,13 +1,13 @@
 language: java
 
+language: java
+install: true
+
 jdk:
   - oraclejdk10
 
-install:
-  - gradle assemble
- 
 script:
-  - gradle check
+  - ./gradlew build --scan -s
  
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
