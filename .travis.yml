@@ -4,10 +4,10 @@ jdk:
   - oraclejdk10
 
 install:
-  - ./gradlew assemble
+  - gradle assemble
  
 script:
-  - ./gradlew check
+  - gradle check
  
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
