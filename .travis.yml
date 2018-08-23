@@ -1,25 +1,8 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
-os:
-  - linux
-
-branches:
-  only:
-    - master
-
-cache:
-  directories:
-  - $HOME/.gradle
+  - oraclejdk10
 
 before_script:
-  - git fetch
-  - git checkout -b gh-pages
-  - git merge origin/master
-  - git rm --cached --ignore-unmatch index.html
+- chmod a+x gradlew
 
-script:
-  - ./gradlew clean publish -i --continue
-  - ./gradlew -b finalize.gradle finalize -i
+script: ./gradlew build
